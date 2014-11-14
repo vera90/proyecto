@@ -13,5 +13,11 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('capturar');
+});
+
+Route::post('/procesar', function()
+{
+	$data = Input::all();
+	var_dump($data);
 });

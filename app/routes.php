@@ -21,3 +21,8 @@ Route::post('/procesar', function()
 	$data = Input::all();
 	var_dump($data);
 });
+
+Route::get('/layout', function()
+{
+	return View::make('layout');
+});

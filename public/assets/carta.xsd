@@ -1,0 +1,12 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:carta="http://esquemaCarta"
+  targetNamespace="http://esquemaCarta">
+  <xsd:element name="cartas" type="carta:ModeloCarta"/>
+  <xsd:complexType name="ModeloCarta" mixed="true">
+    <xsd:sequence>
+      <xsd:element name="fecha" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="nombre" minOccurs="0" type="xsd:string"/>
+      <xsd:element name="apellido" minOccurs="0" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

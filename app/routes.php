@@ -10,19 +10,38 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
 Route::get('/', function()
 {
-	return View::make('capturar');
+    return View::make('hello');
 });
 
-Route::post('/procesar', function()
+Route::get('/factura', function()
 {
-	$data = Input::all();
-	var_dump($data);
+    return View::make('factura');
 });
 
-Route::get('/layout', function()
-{
-	return View::make('layout');
-});
+Route::post('/tipoFacturas', 'UsuarioController@tiposFactura');
+
+Route::post('/metodosPago', 'ClienteController@metodosPago');
+
+Route::post('/tiposImpuesto', 'ClienteController@tiposImpuesto');
+
+Route::post('/getUsuario', 'UsuarioController@obtenerUsuario');
+
+Route::post('/updateUsuario', 'UsuarioController@updateUsuario');
+
+Route::post('/getClientes', 'ClienteController@listarClientes');
+
+Route::post('/createCliente', 'ClienteController@guardarCliente');
+
+Route::post('/updateCliente','ClienteController@actualizarProducto');
+
+Route::post('/getProductos', 'ProductoController@listarProductos');
+
+Route::post('/createProducto', 'ProductoController@guardarProducto');
+
+Route::post('/updateProducto', 'ProductoController@actualizarProducto');
+
+Route::post('/deleteProducto', 'ProductoController@eliminarProducto');
+
+Route::get('/xmls', 'XmlController@crearXml');

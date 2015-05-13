@@ -45,3 +45,5 @@ Route::post('/updateProducto', 'ProductoController@actualizarProducto');
 Route::post('/deleteProducto', 'ProductoController@eliminarProducto');
 
 Route::get('/xmls', 'XmlController@crearXml');
+
+Route::get('/validar','Validar@validar');

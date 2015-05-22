@@ -63,16 +63,16 @@ jQuery(document).ready(function () {
 var callbacksUsuario = {
     tiposFactura: function(){
     $.ajax({
-        url: '/tipoFacturas',
+        url: urlFactura.tipoFacturas,
         type: 'POST',
         data: null,
         contentType: 'application/x-www-form-urlencoded',
     }).done(function(data) {
-        if(data.tiposFactura.length > 0)
+        if(data.tipo_documento.length > 0)
             {
                 var options = "<option value='0'>Selecciona tipo factura...</option>";
-               for(var i=0; i<data.tiposFactura.length; i++){
-                   options += "<option value='" + data.tiposFactura[i].id + "'>" + data.tiposFactura[i].tipo + "</option>";
+               for(var i=0; i<data.tipo_documento.length; i++){
+                   options += "<option value='" + data.tipo_documento[i].id + "'>" + data.tipo_documento[i].tipo_documento + "</option>";
                }
                 
                 $('#tipo_factura').append(options);
@@ -83,7 +83,7 @@ var callbacksUsuario = {
 },
     obtenerUsuario: function(){
         $.ajax({
-        url: '/getUsuario',
+        url: urlFactura.getUsuario,
         type: 'POST',
         data: null,
         contentType: 'application/x-www-form-urlencoded',
@@ -151,7 +151,7 @@ var callbacksUsuario = {
         obj.estado              = $('#suc_estado').val();
 
         $.ajax({
-        url: '/updateUsuario',
+        url: urlFactura.updateUsuario,
         type: 'POST',
         data: obj,
         contentType: 'application/x-www-form-urlencoded',
@@ -228,7 +228,7 @@ var callbacksCliente = {
     crearCliente: function(objCliente){
         
         $.ajax({
-            url: '/createCliente',
+            url: urlFactura.createCliente,
             type: 'POST',
             data: objCliente,
             contentType: 'application/x-www-form-urlencoded',
@@ -242,7 +242,7 @@ var callbacksCliente = {
     modificarCliente: function(objCliente){
         
         $.ajax({
-            url: '/updateCliente',
+            url: urlFactura.updateCliente,
             type: 'POST',
             data: objCliente,
             contentType: 'application/x-www-form-urlencoded',
@@ -255,7 +255,7 @@ var callbacksCliente = {
     },
     listarClientes: function(){
         $.ajax({
-                url: '/getClientes',
+                url: urlFactura.getClientes,
                 type: 'POST',
                 data: null,
                 contentType: 'application/x-www-form-urlencoded',
@@ -282,7 +282,7 @@ var callbacksCliente = {
     },
     metodosPago: function(){
         $.ajax({
-                url: '/metodosPago',
+                url: urlFactura.metodosPago,
                 type: 'POST',
                 data: null,
                 contentType: 'application/x-www-form-urlencoded',
@@ -301,7 +301,7 @@ var callbacksCliente = {
     },
     tiposImpuesto: function(){
         $.ajax({
-                url: '/tiposImpuesto',
+                url: urlFactura.tiposImpuesto,
                 type: 'POST',
                 data: null,
                 contentType: 'application/x-www-form-urlencoded',
@@ -323,7 +323,7 @@ var callbacksCliente = {
 var callbacksProducto = {
     listarProductos: function(){
         $.ajax({
-            url: '/getProductos',
+            url: urlFactura.getProductos,
             type: 'POST',
             data: null,
             contentType: 'application/x-www-form-urlencoded',
@@ -366,7 +366,7 @@ var callbacksProducto = {
         //var objProducto = callbacksProducto.datosModalProducto();
         
         $.ajax({
-                url: '/createProducto',
+                url: urlFactura.createProducto,
                 type: 'POST',
                 data: objProducto,
                 contentType: 'application/x-www-form-urlencoded',
@@ -382,7 +382,7 @@ var callbacksProducto = {
         if(id != null){
             var objProducto = new Object({id:id});
             $.ajax({
-                url: '/deleteProducto',
+                url: urlFactura.deleteProducto,
                 type: 'POST',
                 data: objProducto,
                 contentType: 'application/x-www-form-urlencoded',
@@ -397,7 +397,7 @@ var callbacksProducto = {
         //var objProducto = callbacksProducto.datosModalProducto();
         
         $.ajax({
-                url: '/updateProducto',
+                url: urlFactura.updateProducto,
                 type: 'POST',
                 data: objProducto,
                 contentType: 'application/x-www-form-urlencoded',

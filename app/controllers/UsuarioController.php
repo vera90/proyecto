@@ -1,12 +1,12 @@
 <?php
 
 class UsuarioController extends BaseController {
-    
-    public function tiposFactura()
+
+    public function tipoFactura()
     {
-        $data = TipoFactura::all();
+        $data = tipo_documento::all();
         
-        return Response::json(array('tiposFactura' => $data));
+        return Response::json(array('tipo_documento' => $data));
     }
     
     public function obtenerUsuario()

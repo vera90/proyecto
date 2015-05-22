@@ -20,7 +20,7 @@ Route::get('/factura', function()
     return View::make('factura');
 });
 
-Route::post('/tipoFacturas', 'UsuarioController@tiposFactura');
+Route::post('/tipoFacturas', 'UsuarioController@tipoFactura');
 
 Route::post('/metodosPago', 'ClienteController@metodosPago');
 

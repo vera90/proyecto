@@ -58,6 +58,7 @@
 @stop
 
 @section('scriptByPage')
+    <script src="assets/script/config.js"></script>
 <script src="assets/script/factura.js"></script>
 {{--<script src="assets/script/limpiar.js"></script>--}}
 @stop
